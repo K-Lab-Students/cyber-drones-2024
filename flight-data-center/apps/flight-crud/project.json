@@ -1,0 +1,9 @@
+{
+  "name": "flight-crud",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/flight-crud/src",
+  "projectType": "application",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project flight-crud --web",
+  "targets": {}
+}

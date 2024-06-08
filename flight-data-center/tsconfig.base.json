@@ -1,0 +1,25 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@flight-data-center/layouts": ["libs/src/index.ts"],
+      "@flight-data-center/modules": ["libs/modules/src/index.ts"],
+      "@flight-data-center/pages": ["libs/pages/src/index.ts"],
+      "@flight-data-center/uis": ["libs/uis/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

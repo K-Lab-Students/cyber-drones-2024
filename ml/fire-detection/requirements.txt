@@ -1,0 +1,4 @@
+ultralytics
+roboflow
+tensorflow-macos
+tensorflow-metal
