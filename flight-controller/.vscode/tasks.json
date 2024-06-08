@@ -1,0 +1,28 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cmake",
+			"label": "Build PC version",
+			"command": "build",
+			"targets": [
+				"FlightController"
+			],
+			"group": "build",
+		},
+		{
+			"type": "cmake",
+			"label": "Build STM32 version",
+			"command": "build",
+			"targets": [
+				"FlightController.elf"
+			],
+			"group": "build",
+		},
+		{
+			"type": "shell",
+			"label": "start analyzer",
+			"command": "puncover --elf_file ${command:cmake.launchTargetPath} --src_root ${workspaceFolder} --build_dir ${command:cmake.buildDirectory}",
+		}
+	]
+}
