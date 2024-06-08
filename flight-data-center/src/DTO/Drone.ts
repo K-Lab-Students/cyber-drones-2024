@@ -5,4 +5,5 @@ export interface Drone {
     lng: number;
     height: number;
     telemetryData: TelemetryData;
+    ip: string;
 }

@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+
+
+#video-container {
+  position: relative;
+  width: 600px;
+  height: 480px;
+  margin: 0 auto;
+}
+
+#video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+#arrows-container {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 6em; /* Make the arrows larger */
+  color: rgb(10, 212, 61);
+}
+
+.arrow {
+  display: none;
+  margin: 0 20px;
+}
