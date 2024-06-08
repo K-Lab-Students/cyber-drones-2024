@@ -123,7 +123,7 @@ const DashboardPage: React.FC = () =>  {
                     <NavbarUI drone={drones[0]} />
                 </div>
                 <YMaps>
-                    <Map defaultState={{ center: [drones[0].lat, drones[0].lng], zoom: 12 }} width={"100%"} height={"100%"}>
+                    <Map defaultState={{ center: [drones[0].lat, drones[0].lng], zoom: 16 }} width={"100%"} height={"100%"}>
                         <Circle
                             geometry={[[drones[0].lat, drones[0].lng], 35]}
                             options={{
@@ -169,13 +169,17 @@ const DashboardPage: React.FC = () =>  {
                     }
                 </div>
 
-                <div className={'mt-4'}>
+                <div className="shadow mt-4 p-2 rounded-md ring-1 border-1 border-gray-100 space-y-4">
                     <h1 className={'text-center'}>Quadcopter Telemetry Dashboard</h1>
                     <TelemetryChart data={drones[0].telemetryData} />
                 </div>
 
-                <div className="mt-4">
+                <div className="shadow mt-4 p-2 rounded-md ring-1 border-1 border-gray-100 space-y-4">
                     <DroneControl />
+                </div>
+
+                <div className="mt-4">
+
                 </div>
             </div>
         </div>
