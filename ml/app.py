@@ -95,7 +95,7 @@ ser = serial.Serial(
 
 def send_control_signals(x, y, z, yaw):
     try:
-        message = bytes([255,255, int(x * 127 + 127), int(y * 127 + 127), int(z * 127 + 127), int(yaw * 127 + 127)])
+        message = bytes([255, 255, int(x * 127 + 127), int(y * 127 + 127), int(z * 127 + 127), int(yaw * 127 + 127)])
         ser.write(message)
         app.logger.debug(f'Sent bytes: {message}')
     except Exception as e:
