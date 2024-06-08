@@ -1,4 +1,4 @@
-from flask import Flask, render_template, Response, jsonify, request, render_template_string
+from flask import Flask, render_template, Response, jsonify, request, render_template_string, send_file
 import cv2
 from ultralytics import YOLO
 from picamera2 import Picamera2
@@ -273,6 +273,14 @@ def video_feed():
 def get_control_signals():
     global control_signals
     return jsonify(control_signals)
+
+@app.route('/image_with_signals')
+def get_image_with_signals():
+    try:
+        return send_file('image_with_signals.jpg', mimetype='image/jpeg')
+    except Exception as e:
+        app.logger.error(f"Error sending image with signals: {e}")
+        return jsonify({"error": "Failed to retrieve image"}), 500
 
 if __name__ == '__main__':
     try:
