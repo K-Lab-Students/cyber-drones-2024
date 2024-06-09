@@ -65,12 +65,27 @@ const DashboardPage: React.FC = () =>  {
         return processingDroneHeight(height) + "px";
     }
 
+    const apiControlServo = async (angle: number) => {
+        try {
+            const response = await fetch('http://' + drones[0].ip + ':5000/set_angle?angle=' + angle);
+            if (!response.ok) {
+                throw new Error(`Ошибка: ${response.statusText}`);
+            }
+            const data = await response.json();
+            console.log('Угол установлен:', data);
+        } catch (error) {
+            console.error('Ошибка при выполнении запроса:', error);
+        }
+    };
+
     function closeBackPack() {
         setBackPack(true);
+        apiControlServo(0);
     }
 
     function openBackPack() {
         setBackPack(false);
+        apiControlServo(90);
     }
 
     return (<>
@@ -230,6 +245,7 @@ const DashboardPage: React.FC = () =>  {
                     {
                         (backPack) ? <button type={'button'} className={'w-full py-2 font-bold bg-red-400 hover:bg-red-500 rounded-md'} onClick={() => openBackPack()}>Сбросить</button> : ""
                     }
+                    <button type={'button'} className={'w-full py-2 font-bold bg-red-400 hover:bg-red-500 rounded-md'} onClick={() => closeBackPack()}>Debug Close</button>
                 </div>
 
                 <div className="shadow mt-4 p-2 rounded-md ring-1 border-1 border-gray-100 space-y-4">
